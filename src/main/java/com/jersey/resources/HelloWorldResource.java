@@ -1,23 +1,26 @@
 
-package java.com.jersey.resources;
+package com.jersey.resources;
 
-import com.jersey.api;
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.Produces;
-import javax.ws.rs.QueryParam;
-import javax.ws.rs.core.MediaType;
+import com.jersey.api.Saying;
+//import org.slf4j.Logger;
+//import org.slf4j.LoggerFactory;
 
-import com.sun.org.slf4j.internal.LoggerFactory;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import java.util.Optional;
 import java.util.concurrent.atomic.AtomicLong;
+
+import jakarta.ws.rs.GET;
+import jakarta.ws.rs.Path;
+import jakarta.ws.rs.Produces;
+import jakarta.ws.rs.QueryParam;
+import jakarta.ws.rs.core.MediaType;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 @Path("/hello-world")
 @Produces(MediaType.APPLICATION_JSON)
 public class HelloWorldResource {
-    private static final Logger LOG = LoggerFactory.getLogger(HelloWorldApplication.class);
+   // private static final Logger LOG = LoggerFactory.getLogger(HelloWorldResource.class);
+  private static final Logger logger = LogManager.getLogger(HelloWorldResource.class);
 
     private final String template;
     private final String defaultName;
@@ -30,9 +33,8 @@ public class HelloWorldResource {
     }
 
     @GET
-    @Timed
     public Saying sayHello(@QueryParam("name") Optional<String> name) {
-        LOG.info("sayHello");
+        logger.info("sayHello");
         final String value = String.format(template, name.orElse(defaultName));
         return new Saying(counter.incrementAndGet(), value);
     }

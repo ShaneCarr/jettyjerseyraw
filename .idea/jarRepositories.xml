@@ -9,6 +9,16 @@
     <remote-repository>
       <option name="id" value="central" />
       <option name="name" value="Default Repository" />
+      <option name="url" value="https://repo.maven.apache.org/maven2/" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="central2" />
+      <option name="name" value="Default Repository" />
+      <option name="url" value="https://repo1.maven.org/maven2" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="central" />
+      <option name="name" value="Default Repository" />
       <option name="url" value="https://repo1.maven.org/maven2" />
     </remote-repository>
     <remote-repository>
@@ -24,6 +34,11 @@
     <remote-repository>
       <option name="id" value="jcenter" />
       <option name="name" value="jcenter" />
+      <option name="url" value="https://jcenter.bintray.com" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="central3" />
+      <option name="name" value="bintray" />
       <option name="url" value="https://jcenter.bintray.com" />
     </remote-repository>
   </component>
